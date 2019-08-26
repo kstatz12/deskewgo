@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+service DeSkew {
+        rpc DeskewImage (DeSkewRequest) returns (DeSkewResponse) {}
+}
+
+message DeSkewRequest {
+        string source_bucket = 1;
+        string source_key = 2;
+}
+
+message DeSkewResponse {
+       string new_bucket = 1; 
+       string new_key = 2;
+}

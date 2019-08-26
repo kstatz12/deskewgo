@@ -58,6 +58,10 @@ func deskew(file * os.File, angle float64) (newFile * os.File) {
 		log.Fatal(err)
 	}
 
+	b, err := gocv.IMEncode(gocv.PNGFileExt, rotated)
+	if err != nil{
+		log.Fatal(err)
+	}
 	newFile.Write(b)
 	return newFile
 }
